@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Application } from '../application';
+import { Application } from '../interfaces/application.interface';
 import { ApplicationService } from '../application.service';
 
 @Component({
@@ -11,13 +11,20 @@ export class DashboardComponent implements OnInit {
   applications: Application[];
 
   ngOnInit() {
-    this.getApplications();
+    this.fetchApplications();
   }
 
   constructor(private applicationService: ApplicationService) { }
 
-  getApplications(): void {
-    this.applicationService.getApplications()
-      .subscribe(applications => this.applications = applications);
+  fetchApplications(): void {
+    this.applicationService.getApplications().subscribe(
+      response => { 
+        this.applications = response;
+        this.applicationService.applications = response;
+      },
+      error => {
+        console.error('Failed to get applications', error);
+      }
+    );
   }
 }

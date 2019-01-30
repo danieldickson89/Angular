@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Application } from './application';
+import { Application } from './interfaces/application.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
-import { catchError, tap } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,6 +13,8 @@ const httpOptions = {
 })
 
 export class ApplicationService {
+
+  public applications: Application[] = [];
 
   /**
  * Handle Http operation that failed.
@@ -48,19 +49,6 @@ export class ApplicationService {
 
   /** Get applications from the server */
   getApplications(): Observable<Application[]> {
-    return this.http.get<Application[]>(this.applicationsUrl)
-      .pipe(
-        tap(_ => this.log('fetched applications')),
-        catchError(this.handleError('getApplications', []))
-      );
-  }
-
-  /** GET application by id. Will 404 if id not found */
-  getApplication(id: number): Observable<Application> {
-    const url = `${this.applicationsUrl}/${id}`;
-    return this.http.get<Application>(url).pipe(
-      tap(_ => this.log(`fetched application id=${id}`)),
-      catchError(this.handleError<Application>(`getApplication id=${id}`))
-    );
+    return this.http.get<Application[]>(this.applicationsUrl);
   }
 }

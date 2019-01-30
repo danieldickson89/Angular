@@ -29,13 +29,11 @@ export class InMemoryDataService {
             links: [
               {
                 url: 'https://www.uvu.edu/',
-                description: 'Blah blah blah',
-                links: [
-                  {
-                    url: 'https://www.uvu.edu/',
-                    description: 'A link for Registration'
-                  }
-                ]
+                description: 'A link for Registration'
+              },
+              {
+                url: 'https://www.google.com/',
+                description: 'Google it!'
               }
             ]
           },
@@ -62,6 +60,14 @@ export class InMemoryDataService {
               {
                 url: 'https://www.uvu.edu/',
                 description: 'A link for QA'
+              },
+              {
+                url: 'https://www.qa-something.edu/',
+                description: 'Another QA link'
+              },
+              {
+                url: 'https://www.qa-one-more-thing.edu/',
+                description: 'A third qa link'
               }
             ]
           },

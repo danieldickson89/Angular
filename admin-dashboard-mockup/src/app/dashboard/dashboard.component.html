@@ -1,25 +1,30 @@
-<!-- <ul>
-  <li *ngFor="let application of applications">
-    {{application.name}}
-  </li>
-</ul> -->
-
 <div>
 
-    <div>
-  
-      <mat-nav-list>
-        <h3 matSubheader>Applications</h3>
-        <mat-divider></mat-divider>
-  
-        <div *ngFor="let application of applications;">
-          <a mat-list-item [routerLink]="['application',application.name]">{{ application.name}}</a>
-          <mat-divider></mat-divider>
+  <div>
+
+    <mat-nav-list>
+      <h3 matSubheader>Applications</h3>
+      <mat-divider></mat-divider>
+
+      <div *ngFor="let application of applications;">
+        <a mat-list-item [routerLink]="['application',application.name]">{{ application.name}}</a>
+        <div *ngFor="let category of application.categories;">----------{{ category.description }}
+          <div *ngFor="let link of category.links;">-------------------------{{link.url}}</div>
         </div>
         <mat-divider></mat-divider>
-      </mat-nav-list>
-  
-    </div>
-  
+      </div>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+
   </div>
-  
+
+</div>
+
+
+<ul class="applications">
+  <li *ngFor="let application of applications">
+    <a routerLink="/application/{{application.code}}">
+      {{application.name}}
+    </a>
+  </li>
+</ul>

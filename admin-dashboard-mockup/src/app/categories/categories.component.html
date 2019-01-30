@@ -1,0 +1,16 @@
+<div>
+  <a routerLink="">Go Back</a>
+</div>
+
+<div *ngIf="application">
+
+  <h2>{{ application.name }} Categories:</h2>
+  <ul class="categories">
+    <li *ngFor="let category of application.categories">
+      <a>
+        {{category.category}}
+      </a>
+    </li>
+  </ul>
+
+</div>
