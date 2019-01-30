@@ -1,5 +1,25 @@
-<ul>
+<!-- <ul>
   <li *ngFor="let application of applications">
     {{application.name}}
   </li>
-</ul>
+</ul> -->
+
+<div>
+
+    <div>
+  
+      <mat-nav-list>
+        <h3 matSubheader>Applications</h3>
+        <mat-divider></mat-divider>
+  
+        <div *ngFor="let application of applications;">
+          <a mat-list-item [routerLink]="['application',application.name]">{{ application.name}}</a>
+          <mat-divider></mat-divider>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-nav-list>
+  
+    </div>
+  
+  </div>
+  

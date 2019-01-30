@@ -60,6 +60,19 @@ export class InMemoryDataService {
         description: 'Blah blah blah' }
     ]
 
+    const app = {
+      name: 'prog',
+      code: 'something',
+      categories: [
+        {
+          categCode: 'finaid',
+          links: [
+            {link1: '1'},
+            {link2: '2'}
+          ]
+      }
+      ]
+    }
     return { applications, categories, links };
   }
 }
