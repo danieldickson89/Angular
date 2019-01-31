@@ -20,26 +20,17 @@
 
 <br>
 
-<div>
 
-  <div>
 
-    <mat-nav-list>
 
-      <div *ngFor="let application of applications;">
-        <a mat-list-item routerLink="/application/{{application.code}}">
-          <strong>{{ application.name}}</strong></a>
-        <div *ngFor="let category of application.categories;">
-          ----------{{ category.description }}
-          <div *ngFor="let link of category.links;">
-            -------------------------{{link.url}}</div>
-        </div>
-        <br>
-        <mat-divider></mat-divider>
-      </div>
-      <mat-divider></mat-divider>
-    </mat-nav-list>
 
+<div *ngFor="let application of applications;">
+  <a><strong>{{ application.name}}</strong></a>
+  <div *ngFor="let category of application.categories;">
+    ----------{{ category.description }}
+    <div *ngFor="let link of category.links;">
+      -------------------------{{link.url}}</div>
   </div>
-
+  <br>
+  <mat-divider></mat-divider>
 </div>
