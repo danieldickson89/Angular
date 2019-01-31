@@ -1,3 +1,21 @@
-<p>
-  links works!
-</p>
+<button (click)="goBack()">go back</button>
+
+<div>
+
+  <div *ngIf="category">
+
+    <mat-nav-list>
+      <h3 matSubheader>{{ category.category }} Links:</h3>
+      <mat-divider></mat-divider>
+
+      <div *ngFor="let link of category.links;">
+        <a mat-list-item>
+          {{ link.url }}</a>
+        <mat-divider></mat-divider>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+
+  </div>
+
+</div>

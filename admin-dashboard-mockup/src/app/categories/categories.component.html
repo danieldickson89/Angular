@@ -1,16 +1,21 @@
+<button (click)="goBack()">go back</button>
+
 <div>
-  <a routerLink="">Go Back</a>
-</div>
 
-<div *ngIf="application">
+  <div *ngIf="application">
 
-  <h2>{{ application.name }} Categories:</h2>
-  <ul class="categories">
-    <li *ngFor="let category of application.categories">
-      <a routerLink="/application/{{application.code}}/{{category.category}}">
-        {{category.category}}
-      </a>
-    </li>
-  </ul>
+    <mat-nav-list>
+      <h3 matSubheader>{{ application.name }} Categories:</h3>
+      <mat-divider></mat-divider>
+
+      <div *ngFor="let category of application.categories;">
+        <a mat-list-item routerLink="/application/{{application.code}}/{{category.category}}">
+          <strong>{{ category.category }}</strong></a>
+        <mat-divider></mat-divider>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+
+  </div>
 
 </div>

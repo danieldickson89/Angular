@@ -1,9 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Location } from '@angular/common';
 import { Application, Category }         from '../interfaces/application.interface';
 import { ApplicationService }  from '../application.service';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-categories',
@@ -18,13 +17,14 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private applicationService: ApplicationService
+    private applicationService: ApplicationService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     this.application = this.filterApplications();
     this.categories = this.application.categories;
-    console.log(this.application)
+    console.log('APPLICATION: ', this.application)
   }
 
   filterApplications(): Application {
@@ -34,5 +34,9 @@ export class CategoriesComponent implements OnInit {
       }
     );
     return this.applications[0];
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
