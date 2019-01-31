@@ -1,0 +1,108 @@
+
+$uvu-brown: (
+    50: #696158,
+    100: #96908A,
+    200: #4A443E,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+    contrast: (
+      50: #FFFFFF,
+      100: #FFFFFF,
+      200: #FFFFFF,
+      300: #FFFFFF,
+      400: #FFFFFF,
+      500: #FFFFFF,
+      600: #FFFFFF,
+      700: #FFFFFF,
+      800: #FFFFFF,
+      900: #FFFFFF,
+      A100: #FFFFFF,
+      A200: #FFFFFF,
+      A400: #FFFFFF,
+      A700: #FFFFFF
+    )
+  );
+  
+  $uvu-black: (
+    50: #000000,
+    100: #2C2C2C,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+    contrast: (
+      50: #FFFFFF,
+      100: #FFFFFF,
+      200: #FFFFFF,
+      300: #FFFFFF,
+      400: #FFFFFF,
+      500: #FFFFFF,
+      600: #FFFFFF,
+      700: #FFFFFF,
+      800: #FFFFFF,
+      900: #FFFFFF,
+      A100: #FFFFFF,
+      A200: #FFFFFF,
+      A400: #FFFFFF,
+      A700: #FFFFFF
+    )
+  );
+  
+  $uvu-green: (
+    50: #275d38,
+    100: #538861,
+    200: #003111,
+    300: #275d38,
+    400: #275d38,
+    500: #275d38,
+    600: #275d38,
+    700: #275d38,
+    800: #275d38,
+    900: #275d38,
+    A100: #275d38,
+    A200: #275d38,
+    A400: #275d38,
+    A700: #275d38,
+    contrast: (
+      50: #FFFFFF,
+      100: #FFFFFF,
+      200: #FFFFFF,
+      300: #FFFFFF,
+      400: #FFFFFF,
+      500: #FFFFFF,
+      600: #FFFFFF,
+      700: #FFFFFF,
+      800: #FFFFFF,
+      900: #FFFFFF,
+      A100: #FFFFFF,
+      A200: #FFFFFF,
+      A400: #FFFFFF,
+      A700: #FFFFFF
+    )
+  );
+  
+  $uvu-theme-primary: mat-palette($uvu-green, 50, 100, 200);
+  $uvu-theme-accent: mat-palette($uvu-brown, 50, 100, 200);
+  // //$uvu-theme-warn: mat-palette($mat-amber);
+
+  $uvu-theme: mat-light-theme(
+    $uvu-theme-primary,
+    $uvu-theme-accent
+);

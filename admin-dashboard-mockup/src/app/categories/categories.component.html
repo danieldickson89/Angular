@@ -7,7 +7,7 @@
   <h2>{{ application.name }} Categories:</h2>
   <ul class="categories">
     <li *ngFor="let category of application.categories">
-      <a>
+      <a routerLink="/application/{{application.code}}/{{category.category}}">
         {{category.category}}
       </a>
     </li>

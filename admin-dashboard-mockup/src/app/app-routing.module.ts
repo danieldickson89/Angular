@@ -12,12 +12,16 @@ const routes: Routes = [
   {
     path: 'application/:application',
     component: CategoriesComponent,
-    children: [
-      {
-        path: ':category',
-        component: LinksComponent
-      }
-    ]
+    // children: [
+    //   {
+    //     path: ':category',
+    //     component: LinksComponent
+    //   }
+    // ]
+  },
+  {
+    path: 'application/:application/:category',
+    component: LinksComponent
   }
 ];
 
