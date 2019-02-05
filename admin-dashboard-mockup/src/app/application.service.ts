@@ -26,4 +26,8 @@ export class ApplicationService {
   getApplications(): Observable<Application[]> {
     return this.http.get<Application[]>(this.applicationsUrl);
   }
+
+  addApplication (application: Application): Observable<Application> {
+    return this.http.post<Application>(this.applicationsUrl, application, httpOptions);
+  }
 }

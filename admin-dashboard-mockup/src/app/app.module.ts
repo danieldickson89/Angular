@@ -11,13 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { CategoriesComponent } from './categories/categories.component';
 import { LinksComponent } from './links/links.component';
+import { LinkDetailComponent } from './link-detail/link-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     CategoriesComponent,
-    LinksComponent
+    LinksComponent,
+    LinkDetailComponent
   ],
   imports: [
     BrowserModule,
