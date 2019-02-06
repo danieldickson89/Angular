@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { LinksComponent } from './links/links.component';
+import { LinkDetailComponent } from './link-detail/link-detail.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'application/:application/:category',
     component: LinksComponent
+  },
+  {
+    path: 'application/:application/:category/:linkId',
+    component: LinkDetailComponent
   }
 ];
 

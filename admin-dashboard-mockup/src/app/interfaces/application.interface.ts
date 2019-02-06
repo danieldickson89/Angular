@@ -5,13 +5,13 @@ export interface Application {
 }
 
 export interface Category {
-    id: number,
     category: string,
     description: string,
     links: Link[]
 }
 
 export interface Link {
+    id: number,
     url: string,
     description: string
 }
