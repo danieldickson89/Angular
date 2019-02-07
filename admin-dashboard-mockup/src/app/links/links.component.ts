@@ -23,12 +23,12 @@ export class LinksComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.category = this.filterCategories();
+    this.category = this.findCategory();
     this.links = this.category.links;
     console.log('LINKS: ', this.category.links)
   }
 
-  filterCategories(): Category {
+  findCategory(): Category {
     this.applicationService.applications.filter(
       application => {
         if (application.code === this.route.snapshot.params.application) {
