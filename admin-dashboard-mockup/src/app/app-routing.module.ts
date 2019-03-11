@@ -25,7 +25,7 @@ const routes: Routes = [
     component: LinksComponent
   },
   {
-    path: 'application/:application/:category/:linkId',
+    path: 'application/:category/:linkId',
     component: LinkDetailComponent
   }
 ];

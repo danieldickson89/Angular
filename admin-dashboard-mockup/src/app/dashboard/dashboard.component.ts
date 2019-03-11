@@ -11,20 +11,14 @@ export class DashboardComponent implements OnInit {
   applications: Application[];
 
   ngOnInit() {
-    this.fetchApplications();
+    this.applicationService.queryApplications().subscribe( 
+      applications => {
+        this.applications = applications;
+        this.applicationService.setApplications(applications);
+      });
+
   }
 
   constructor(private applicationService: ApplicationService) { }
 
-  fetchApplications(): void {
-    this.applicationService.getApplications().subscribe(
-      response => { 
-        this.applications = response;
-        this.applicationService.applications = response;
-      },
-      error => {
-        console.error('Failed to get applications', error);
-      }
-    );
-  }
 }

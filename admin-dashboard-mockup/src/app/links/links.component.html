@@ -9,7 +9,7 @@
       <mat-divider></mat-divider>
 
       <div *ngFor="let link of category.links;">
-        <a mat-list-item routerLink="/application/{{application.code}}/{{category.category}}/{{link.id}}">
+        <a mat-list-item routerLink="/application/{{category.category}}/{{link.id}}">
           {{ link.url }}</a>
         <mat-divider></mat-divider>
       </div>

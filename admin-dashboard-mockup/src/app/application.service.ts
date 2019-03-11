@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Application } from './interfaces/application.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { MessageService } from './message.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,17 +13,26 @@ const httpOptions = {
 
 export class ApplicationService {
 
-  public applications: Application[] = [];
+  private applications: Application[] = [];
 
   private applicationsUrl = 'api/applications'; // URL to web api
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+  ) { }
 
   /** Get applications from the server */
-  getApplications(): Observable<Application[]> {
+
+  public queryApplications(): Observable<Application[]> {
     return this.http.get<Application[]>(this.applicationsUrl);
+  }
+
+  public getApplications(): Application[] {
+    return this.applications;
+  }
+
+  public setApplications(applications: Application[]): void {
+    this.applications = applications;
   }
 
   addApplication (application: Application): Observable<Application> {

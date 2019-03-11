@@ -11,9 +11,8 @@ import { Application, Category, Link } from '../interfaces/application.interface
 })
 export class LinksComponent implements OnInit {
 
-  private application: Application;
+  private categories: Category[];
   private category: Category;
-  categories: Category[];
   links: Link[];
 
   constructor(
@@ -23,17 +22,15 @@ export class LinksComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.category = this.filterCategories();
+    this.category = this.findCategory();
     this.links = this.category.links;
-    console.log('LINKS: ', this.category.links)
   }
 
-  filterCategories(): Category {
-    this.applicationService.applications.filter(
-      application => {
-        if (application.code === this.route.snapshot.params.application) {
-          this.application = application;
-          this.categories = application.categories.filter(
+  findCategory(): Category {
+    this.applicationService.getApplications().filter(
+      applications => {
+        if (applications.code === this.route.snapshot.params.application) {
+          this.categories = applications.categories.filter(
             category => {
               return category.category === this.route.snapshot.params.category
             }

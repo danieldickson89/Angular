@@ -12,7 +12,6 @@ import { ApplicationService }  from '../application.service';
 export class CategoriesComponent implements OnInit {
 
   private application: Application;
-  private applications: Application[];
   categories: Category[];
 
   constructor(
@@ -22,18 +21,18 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.application = this.filterApplications();
+    this.application = this.findApplication();
     this.categories = this.application.categories;
     console.log('APPLICATION: ', this.application)
   }
 
-  filterApplications(): Application {
-    this.applications = this.applicationService.applications.filter(
-      application => {
-        return application.code === this.route.snapshot.params.application;
+  findApplication(): Application {
+    let applications = this.applicationService.getApplications().filter(
+      applications => {
+        return applications.code === this.route.snapshot.params.application;
       }
     );
-    return this.applications[0];
+    return applications[0]
   }
 
   goBack(): void {
